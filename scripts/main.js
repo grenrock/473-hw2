@@ -1,6 +1,7 @@
 var DETAIL_IMAGE_SELECTOR = '[data-image-role="target"]';
 var DETAIL_TITLE_SELECTOR = '[data-image-role="title"]';
 var THUMBNAIL_LINK_SELECTOR = '[data-image-role="trigger"]';
+var index;
 
 function setDetails(imageUrl, titleText) {
   'use strict';
@@ -24,6 +25,7 @@ function titleFromThumb(thumbnail) {
 function setDetailsFromThumb(thumbnail) {
   'use strict';
   setDetails(imageFromThumb(thumbnail), titleFromThumb(thumbnail));
+  index = Number(thumbnail.getAttribute('data-image-index'));
 }
 
 function addThumbClickHandler(thumb) {
@@ -45,6 +47,22 @@ function initializeEvents() {
   'use strict';
   var thumbnails = getThumbnailsArray();
   thumbnails.forEach(addThumbClickHandler);
+  index = 0;
+}
+
+function changeImg(increment) {
+  var thumbnails = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
+  if (index + increment > 4) {
+    index = 0;
+  }
+  else if (index + increment < 0) {
+    index = 4;
+  }
+  else {
+    index += increment;
+  }
+
+  setDetails(imageFromThumb(thumbnails[index]), titleFromThumb(thumbnails[index]));
 }
 
 initializeEvents();

@@ -17,7 +17,8 @@
       <li class="thumbnail-item">
         <a href="otter1.jpg" data-image-role="trigger"
                              data-image-title="Stayin' Alive"
-                             data-image-url="img/otter1.jpg">
+                             data-image-url="img/otter1.jpg"
+                             data-image-index = "0">
             <img class="thumbnail-image" src="img/otter1.jpg" alt="">
             <span class="thumbnail-title">Barry</span>
           </a>
@@ -26,7 +27,8 @@
       <li class="thumbnail-item">
         <a href="otter2.jpg" data-image-role="trigger"
                              data-image-title="How Deep Is Your Love"
-                             data-image-url="img/otter2.jpg">
+                             data-image-url="img/otter2.jpg"
+                             data-image-index = "1">
             <img class="thumbnail-image" src="img/otter2.jpg" alt="">
             <span class="thumbnail-title">Robin</span>
           </a>
@@ -35,7 +37,8 @@
       <li class="thumbnail-item">
         <a href="otter3.jpg" data-image-role="trigger"
                              data-image-title="You Should Be Dancing"
-                             data-image-url="img/otter3.jpg">
+                             data-image-url="img/otter3.jpg"
+                             data-image-index = "2">
             <img class="thumbnail-image" src="img/otter3.jpg" alt="">
             <span class="thumbnail-title">Maurice</span>
           </a>
@@ -44,7 +47,8 @@
       <li class="thumbnail-item">
         <a href="otter4.jpg" data-image-role="trigger"
                              data-image-title="Night Fever"
-                             data-image-url="img/otter4.jpg">
+                             data-image-url="img/otter4.jpg"
+                             data-image-index = "3">
             <img class="thumbnail-image" src="img/otter4.jpg" alt="">
             <span class="thumbnail-title">Lesley</span>
           </a>
@@ -53,7 +57,8 @@
       <li class="thumbnail-item">
         <a href="otter5.jpg" data-image-role="trigger"
                              data-image-title="To Love Somebody"
-                             data-image-url="img/otter5.jpg">
+                             data-image-url="img/otter5.jpg"
+                             data-image-index = "4">
             <img class="thumbnail-image" src="img/otter5.jpg" alt="">
             <span class="thumbnail-title">Barbara</span>
           </a>
@@ -63,11 +68,19 @@
     </ul>
 
     <div class="detail-image-container">
+      <button onclick="changeImg(-1)">
+          <img src = "img/arrow-left.png">
+      </button>
       <div class="detail-image-frame">
         <img class="detail-image" data-image-role="target" src="img/otter1.jpg" alt="">
         <span class="detail-image-title" data-image-role="title">Stayin' Alive</span>
       </div>
+      <button onclick="changeImg(+1)">
+          <img src = "img/arrow-right.png">
+      </button>
+
     </div>
+
   </main>
   <script src="scripts/main.js" charset="utf-8"></script>
 </body>
