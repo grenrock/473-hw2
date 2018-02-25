@@ -30,7 +30,7 @@ function setDetailsFromThumb(thumbnail) {
 
 function addThumbClickHandler(thumb) {
   'use strict';
-  thumb.addEventListener('click', function (event) {
+  thumb.addEventListener('click', function(event) {
     event.preventDefault();
     setDetailsFromThumb(thumb);
   });
@@ -54,11 +54,9 @@ function changeImg(increment) {
   var thumbnails = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
   if (index + increment > 4) {
     index = 0;
-  }
-  else if (index + increment < 0) {
+  } else if (index + increment < 0) {
     index = 4;
-  }
-  else {
+  } else {
     index += increment;
   }
 
